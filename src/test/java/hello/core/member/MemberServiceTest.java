@@ -1,10 +1,22 @@
 package hello.core.member;
 
+import hello.core.AppConfig;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class MemberServiceTest {
-    MemberService memberService = new MemberServiceImpl();
+    MemberService memberService;
+
+    /**
+     * Test 전에 매번 memberService를 세팅해줘야 하는 이유가 뭐지?
+     * 그냥 한번만 해놓으면 안되나?
+     */
+    @BeforeEach
+    public void beforeEach() {
+        AppConfig appConfig = new AppConfig();
+        memberService = appConfig.memberService();
+    }
 
     @Test
     void join(){
