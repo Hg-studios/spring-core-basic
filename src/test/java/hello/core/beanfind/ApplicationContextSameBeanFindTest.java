@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.NoUniqueBeanDefinitionException;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 import java.util.Map;
 
@@ -46,6 +47,7 @@ public class ApplicationContextSameBeanFindTest {
 
 
     //같은 타입이 둘 이상 있도록 class 임의로 만듦
+    @Configuration
     static class SameBeanConfig {
 
         @Bean
